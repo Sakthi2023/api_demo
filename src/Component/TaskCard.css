@@ -1,0 +1,20 @@
+.dlt_icon {
+  width: 20px;
+  height: 20px;
+}
+.task_card {
+  margin: 10px;
+  border: 1px solid whitesmoke;
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+}
+.para {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.content_Card {
+  display: flex;
+  justify-content: space-between;
+}
