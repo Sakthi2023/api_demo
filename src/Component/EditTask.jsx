@@ -4,6 +4,7 @@ import Buttons from "./Buttons";
 import axios from "../API/inpuTask";
 
 const EditTask = ({ handleUpdate }) => {
+  const API_URL = "http://localhost:3500/inpuTask";
   const { id } = useParams();
   const navigate = useNavigate();
   const [taskData, setTaskData] = useState({
@@ -15,16 +16,10 @@ const EditTask = ({ handleUpdate }) => {
 
   useEffect(() => {
     const fetchTask = async () => {
-      try {
-        const response = await axios.get(`/inpuTask/${id}`);
-        console.log(response.data);
-        setTaskData(response.data);
-        setErrors(null);
-      } catch (err) {
-        setErrors(err.message);
-      }
+      const response = await fetch(`${API_URL}/${id}`);
+      const data = await response.json();
+      setTaskData(data);
     };
-
     fetchTask();
   }, [id]);
 
